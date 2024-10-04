@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { type } = require('os')
+
 
 const userSchema = new mongoose.Schema({
     name:{
@@ -16,11 +16,11 @@ const userSchema = new mongoose.Schema({
         required:true,
         unique:true
     },
-    dob:{
-        type:Date
+    password:{
+        type:String,
+        required:true
     }
 
 
 })
-
-const User = mongoose.model('User',userSchema)
+module.exports = mongoose.model('User',userSchema)
